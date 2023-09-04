@@ -1,4 +1,4 @@
-import { MyComponent } from "./MyComponent";
+import { TicTacToe } from "./TicTacToe"
 import "./App.css";
 
 function App() {

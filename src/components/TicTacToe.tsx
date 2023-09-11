@@ -23,7 +23,18 @@ export function TicTacToe(): JSX.Element {
                 return el;
             }
         });
-        setBoard([...changedBoard]);
+        //check for win
+        if (
+            changedBoard.filter((element) => element.symbol === null).length ===
+            0
+        ) {
+            setBoard(changedBoard);
+            //check for win
+        }
+
+        const randomIndexWithoutX = findRandomIndex(changedBoard);
+        changedBoard[randomIndexWithoutX].symbol = "o";
+        setBoard(changedBoard);
     };
     console.log(board);
     return (
@@ -41,4 +52,17 @@ export function TicTacToe(): JSX.Element {
             </div>
         </>
     );
+}
+
+function findRandomIndex(board: Square[]): number {
+    const indexesWithoutX: number[] = [];
+    board.forEach((element, index) => {
+        if (element.symbol === null) {
+            indexesWithoutX.push(index);
+        }
+    });
+    const randomIndexValue: number = Math.floor(
+        Math.random() * indexesWithoutX.length
+    );
+    return indexesWithoutX[randomIndexValue];
 }

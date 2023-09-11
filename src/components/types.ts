@@ -5,5 +5,6 @@ interface Square {
 
 interface SquareProps {
     square: Square;
+    handleClick: (square: Square) => void;
 }
 export type { Square, SquareProps };

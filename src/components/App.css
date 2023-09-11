@@ -4,5 +4,13 @@ html {
 
 .board {
     display: grid;
-    border: 1px;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+}
+
+.square {
+    border: black;
+    border-style: solid;
+    font-size: 6rem;
+    text-align: center;
 }

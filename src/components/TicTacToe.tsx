@@ -12,9 +12,13 @@ export function TicTacToe(): JSX.Element {
     console.log(boardState);
     return (
         <>
-            {boardState.map((element) => {
-                return <SquareComponent key={element.id} square={element} />;
-            })}
+            <div className="board">
+                {boardState.map((element) => {
+                    return (
+                        <SquareComponent key={element.id} square={element} />
+                    );
+                })}
+            </div>
         </>
     );
 }

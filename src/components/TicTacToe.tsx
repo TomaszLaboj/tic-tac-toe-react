@@ -59,9 +59,6 @@ export function TicTacToe(): JSX.Element {
         <>
             <div className="title">TIC TAC TOE</div>
 
-            {board.filter((element) => element.symbol !== null).length ===
-                0 && <div className="info">Click on any square to begin</div>}
-
             <div className="board">
                 {board.map((element) => {
                     return (
@@ -75,6 +72,8 @@ export function TicTacToe(): JSX.Element {
                     );
                 })}
             </div>
+            {board.filter((element) => element.symbol !== null).length ===
+                0 && <div className="info">Click on any square to begin</div>}
             <div className="illegal-move">{illegalMoveIndicator}</div>
         </>
     );

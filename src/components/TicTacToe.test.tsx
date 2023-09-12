@@ -2,10 +2,10 @@ import { render, screen } from "../testUtils/testUtils";
 import { TicTacToe } from "./TicTacToe";
 
 //An example of using react-testing-library
-describe("MyComponent", async () => {
-    test("Should have text Hello from My Component on it", () => {
+describe("Tic Tac Toe", async () => {
+    test("Should have text TIC TAC TOE", () => {
         render(<TicTacToe />);
-        const elem = screen.getByText("Tic Tac Toe Game");
+        const elem = screen.getByText("TIC TAC TOE");
         expect(elem).toBeInTheDocument();
     });
 });

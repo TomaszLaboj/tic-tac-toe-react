@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SquareComponent } from "./SquareComponent";
 import { Square } from "./types";
+import { findRandomIndex } from "./findRandomIndex";
 
 export function TicTacToe(): JSX.Element {
     const boardState: Square[] = [];
@@ -23,7 +24,10 @@ export function TicTacToe(): JSX.Element {
                 return el;
             }
         });
-        //check for win
+        const winner: string | null = checkForWin(changedBoard);
+        if (winner !== null) {
+            console.log("winner is ", winner);
+        }
         if (
             changedBoard.filter((element) => element.symbol === null).length ===
             0
@@ -54,15 +58,15 @@ export function TicTacToe(): JSX.Element {
     );
 }
 
-function findRandomIndex(board: Square[]): number {
-    const indexesWithoutX: number[] = [];
-    board.forEach((element, index) => {
-        if (element.symbol === null) {
-            indexesWithoutX.push(index);
+function checkForWin(board: Square[]): string | null {
+    let winner: string | null = null;
+    for (let i = 0; i < 9; i += 3) {
+        if (
+            board[i].symbol === board[i + 1].symbol &&
+            board[i + 1].symbol === board[i + 2].symbol
+        ) {
+            winner = board[i].symbol;
         }
-    });
-    const randomIndexValue: number = Math.floor(
-        Math.random() * indexesWithoutX.length
-    );
-    return indexesWithoutX[randomIndexValue];
+    }
+    return winner;
 }

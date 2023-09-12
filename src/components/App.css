@@ -2,7 +2,14 @@ html {
     background: #8fa195;
 }
 
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 8rem;
+}
 .board {
+    margin-top: 8rem;
     justify-content: center;
     display: grid;
     grid-template-rows: 150px 150px 150px;
@@ -17,4 +24,14 @@ html {
     border-style: solid;
     font-size: 6rem;
     text-align: center;
+}
+
+.info {
+    text-align: center;
+    font-size: 2rem;
+}
+.illegal-move {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 2rem;
 }

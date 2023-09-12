@@ -28,7 +28,7 @@ export function TicTacToe(): JSX.Element {
 
     const handleClickFunction = (clickedSquare: Square) => {
         if (clickedSquare.symbol !== null) {
-            setIllegalMoveIndicator("Illegal move!");
+            setIllegalMoveIndicator("Click on an empty square!");
         } else {
             setIllegalMoveIndicator("");
             const changedBoard: Square[] = board.map((element: Square) => {
@@ -57,6 +57,11 @@ export function TicTacToe(): JSX.Element {
 
     return (
         <>
+            <div className="title">TIC TAC TOE</div>
+
+            {board.filter((element) => element.symbol !== null).length ===
+                0 && <div className="info">Click on any square to begin</div>}
+
             <div className="board">
                 {board.map((element) => {
                     return (
@@ -69,8 +74,8 @@ export function TicTacToe(): JSX.Element {
                         </>
                     );
                 })}
-                <div>{illegalMoveIndicator}</div>
             </div>
+            <div className="illegal-move">{illegalMoveIndicator}</div>
         </>
     );
 }
@@ -81,18 +86,6 @@ function checkForWin(board: Square[]): string | null {
         0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 3, 6, 1, 4, 7, 2, 5, 8, 0, 4, 8, 2, 4, 6,
     ];
     for (let i = 0; i < indexes.length; i += 3) {
-        console.log(
-            "checking indexes",
-            indexes[i],
-            indexes[i + 1],
-            indexes[i + 2]
-        );
-        console.log(
-            "showing board pieces",
-            board[indexes[i]],
-            board[indexes[i + 1]],
-            board[indexes[i + 2]]
-        );
         if (
             board[indexes[i]].symbol === board[indexes[i + 1]].symbol &&
             board[indexes[i + 1]].symbol === board[indexes[i + 2]].symbol

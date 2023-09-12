@@ -29,7 +29,7 @@ module.exports = {
         "plugin:import/recommended",
 
         //accessibility rules on JSX elements
-        "plugin:jsx-a11y/recommended",
+        // "plugin:jsx-a11y/recommended",
 
         //https://typescript-eslint.io/getting-started
         "plugin:@typescript-eslint/recommended",

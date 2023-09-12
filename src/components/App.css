@@ -1,14 +1,18 @@
 html {
-    background: #f8f8f8;
+    background: #8fa195;
 }
 
 .board {
+    justify-content: center;
     display: grid;
-    grid-template-rows: 100px 100px 100px;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
 }
 
 .square {
+    background-color: bisque;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
     border: black;
     border-style: solid;
     font-size: 6rem;

@@ -22,7 +22,7 @@ export function TicTacToe(): JSX.Element {
             winner === null &&
             board.filter((element) => element.symbol === null).length === 0
         ) {
-            alert("No winner!");
+            alert("A draw!");
             setBoard(boardState);
             setIllegalMoveIndicator("");
         }

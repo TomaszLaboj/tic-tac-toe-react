@@ -11,7 +11,8 @@ export function checkForWin(board: Square[]): string | null {
             board[indexes[i + 1]].symbol === board[indexes[i + 2]].symbol
         ) {
             winner = board[indexes[i]].symbol;
+            return winner;
         }
     }
-    return winner;
+    return null;
 }
